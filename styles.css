@@ -266,7 +266,7 @@ body {
 
 .program-img {
   transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  object-position: center top;
+  object-position: center center;
 }
 
 /* Differentials Badge Card */
