@@ -6,7 +6,7 @@
   <title>Alliance Barra Mansa | Academia de Jiu-Jitsu de Alta Performance</title>
   <meta name="description" content="Academia Alliance Barra Mansa - Referência em Jiu-Jitsu no Sul do Estado do Rio. Ambiente premium para todos os níveis, do iniciante ao graduado.">
   
-  <!-- Preconnect to Font Servers for Faster Handshake -->
+  <!-- Preconnect to Font & CDN Servers -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -14,14 +14,35 @@
   <!-- Google Fonts: Bebas Neue & Montserrat with font-display: swap -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap">
   
-  <!-- Fast Custom Compiled CSS (No Heavy Runtime Tailwind CDN) -->
+  <!-- Tailwind CSS CDN Engine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#121212',
+            brandDarkSecondary: '#18181A',
+            brandCard: '#1C1C1E',
+            brandYellow: '#FFCC00',
+            brandYellowHover: '#E6B800',
+          },
+          fontFamily: {
+            heading: ['Bebas Neue', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Design System Styles -->
   <link rel="stylesheet" href="styles.css">
   
-  <!-- Asynchronous Non-Render-Blocking FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-brandDark text-white font-body antialiased">
+<body class="bg-brandDark text-white font-body antialiased selection:bg-brandYellow selection:text-black">
 
   <!-- ==========================================
        HEADER & NAVIGATION WITH ALLIANCE LOGO
@@ -29,14 +50,13 @@
   <header id="mainHeader" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3.5 px-4 sm:px-6 md:px-12 border-b border-white/5">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- Official Alliance Logo with Explicit Dimensions & Async Decoding -->
+      <!-- Official Alliance Logo -->
       <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
         <div class="p-1 bg-brandYellow/10 rounded border border-brandYellow/30 group-hover:border-brandYellow transition-colors">
           <img src="assets/alliance-logo.png" 
                alt="Alliance Jiu Jitsu Logo" 
                width="52" 
                height="63" 
-               fetchpriority="high"
                decoding="async"
                class="h-9 sm:h-10 w-auto filter brightness-0 invert group-hover:scale-105 transition-transform">
         </div>
@@ -112,14 +132,14 @@
        1. HERO SECTION (PRIMEIRA DOBRA)
        ========================================== -->
   <section id="hero" class="relative min-h-screen flex items-center pt-28 sm:pt-32 pb-20 px-4 sm:px-6 md:px-12 bg-overlay-80 bg-cover bg-center overflow-hidden" 
-           style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=60&w=1000&fm=webp&auto=format&fit=crop');">
+           style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=65&w=1200&fm=webp&auto=format&fit=crop');">
     
     <div class="max-w-6xl mx-auto w-full hero-content text-left">
       
       <!-- Top Badge with Official Logo -->
-      <div class="reveal inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/70 border border-brandYellow/50 text-brandYellow text-xs font-bold uppercase tracking-widest mb-6">
+      <div class="reveal inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/70 border border-brandYellow/50 text-brandYellow text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
         <img src="assets/alliance-logo.png" alt="Alliance Triangle Emblem" width="30" height="36" decoding="async" class="h-4 sm:h-5 w-auto filter brightness-0 invert">
-        <span class="w-2 h-2 rounded-full bg-brandYellow"></span>
+        <span class="w-2 h-2 rounded-full bg-brandYellow animate-ping"></span>
         <span>Alliance Barra Mansa • Sul Fluminense</span>
       </div>
 
@@ -138,7 +158,7 @@
       <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
         <button class="js-open-modal btn-cta-primary pulse-cta group text-xl sm:text-2xl py-4.5 sm:py-5 px-6 sm:px-10">
           <span>AGENDAR AULA EXPERIMENTAL</span>
-          <i class="fa-solid fa-arrow-right"></i>
+          <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
         </button>
 
         <a href="#operacional" class="btn-cta-secondary text-center py-4 sm:py-5 px-6 sm:px-8 text-base sm:text-lg">
@@ -271,7 +291,7 @@
 
 
   <!-- ==========================================
-       PROGRAMAS & MODALIDADES (OPTIMIZED WEBP IMAGES)
+       PROGRAMAS & MODALIDADES
        ========================================== -->
   <section id="programas" class="section-padding bg-brandDarkSecondary relative border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
@@ -294,10 +314,10 @@
         <!-- Programa 1 -->
         <div class="program-card reveal reveal-delay-1">
           <div class="relative h-56 sm:h-64 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1564415051543-cb73a7468103?q=65&w=480&fm=webp&auto=format&fit=crop" 
+            <img src="https://images.unsplash.com/photo-1564415051543-cb73a7468103?q=65&w=600&fm=webp&auto=format&fit=crop" 
                  alt="Jiu-Jitsu Iniciantes no Tatame" 
-                 width="480"
-                 height="270"
+                 width="600"
+                 height="337"
                  loading="lazy"
                  decoding="async"
                  class="program-img w-full h-full object-cover">
@@ -322,10 +342,10 @@
         <!-- Programa 2 -->
         <div class="program-card reveal reveal-delay-2">
           <div class="relative h-56 sm:h-64 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=65&w=480&fm=webp&auto=format&fit=crop" 
+            <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=65&w=600&fm=webp&auto=format&fit=crop" 
                  alt="Jiu-Jitsu Avançado Treino Intenso" 
-                 width="480"
-                 height="270"
+                 width="600"
+                 height="337"
                  loading="lazy"
                  decoding="async"
                  class="program-img w-full h-full object-cover">
@@ -350,10 +370,10 @@
         <!-- Programa 3 -->
         <div class="program-card reveal reveal-delay-3 col-span-1 md:col-span-2 lg:col-span-1">
           <div class="relative h-56 sm:h-64 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=65&w=480&fm=webp&auto=format&fit=crop" 
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=65&w=600&fm=webp&auto=format&fit=crop" 
                  alt="Alliance Kids Jiu-Jitsu Infantil" 
-                 width="480"
-                 height="270"
+                 width="600"
+                 height="337"
                  loading="lazy"
                  decoding="async"
                  class="program-img w-full h-full object-cover">
@@ -625,7 +645,7 @@
 
       </div>
 
-      <!-- Google Maps Embed Container with Lazy Loading -->
+      <!-- Google Maps Embed Container -->
       <div class="mt-8 sm:mt-12 rounded-lg overflow-hidden border border-white/10 bg-brandCard shadow-2xl reveal">
         <iframe 
           title="Mapa de Localização Alliance Barra Mansa"
@@ -844,7 +864,7 @@
     </div>
   </div>
 
-  <!-- Custom Deferred Script for Maximum Lighthouse Performance -->
-  <script src="script.js" defer></script>
+  <!-- Custom Script -->
+  <script src="script.js"></script>
 </body>
 </html>
