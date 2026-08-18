@@ -39,8 +39,9 @@
   <!-- Custom Design System Styles -->
   <link rel="stylesheet" href="styles.css">
   
-  <!-- FontAwesome Icons CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Asynchronous FontAwesome (Non-Render-Blocking) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 <body class="bg-brandDark text-white font-body antialiased selection:bg-brandYellow selection:text-black">
 
@@ -52,7 +53,7 @@
       
       <!-- Official Alliance Logo -->
       <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
-        <img src="assets/alliance-logo.png" 
+        <img src="assets/alliance-logo.webp" 
              alt="Alliance Jiu Jitsu Logo" 
              width="52" 
              height="63" 
@@ -103,7 +104,7 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobileNav" class="hidden lg:hidden bg-brandCard border-b border-brandYellow/20 px-6 py-6 mt-3 space-y-4 shadow-2xl rounded-b-xl">
       <div class="flex items-center gap-3 pb-4 border-b border-white/10">
-        <img src="assets/alliance-logo.png" alt="Alliance Logo" width="40" height="48" decoding="async" class="h-8 w-auto filter brightness-0 invert">
+        <img src="assets/alliance-logo.webp" alt="Alliance Logo" width="40" height="48" decoding="async" class="h-8 w-auto filter brightness-0 invert">
         <span class="font-heading text-2xl text-white">ALLIANCE BARRA MANSA</span>
       </div>
       <a href="#hero" class="block text-xl font-heading tracking-wider uppercase text-white hover:text-brandYellow py-1">Início</a>
@@ -130,13 +131,13 @@
        1. HERO SECTION (PRIMEIRA DOBRA)
        ========================================== -->
   <section id="hero" class="relative min-h-screen flex items-center pt-28 sm:pt-32 pb-20 px-4 sm:px-6 md:px-12 bg-overlay-80 bg-cover bg-center overflow-hidden" 
-           style="background-image: url('assets/hero-tatame.jpg');">
+           style="background-image: url('assets/hero-tatame.webp');">
     
     <div class="max-w-6xl mx-auto w-full hero-content text-left">
       
       <!-- Top Badge with Official Logo -->
       <div class="reveal inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/70 border border-brandYellow/50 text-brandYellow text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
-        <img src="assets/alliance-logo.png" alt="Alliance Triangle Emblem" width="30" height="36" decoding="async" class="h-4 sm:h-5 w-auto filter brightness-0 invert">
+        <img src="assets/alliance-logo.webp" alt="Alliance Triangle Emblem" width="30" height="36" decoding="async" class="h-4 sm:h-5 w-auto filter brightness-0 invert">
         <span class="w-2 h-2 rounded-full bg-brandYellow animate-ping"></span>
         <span>Alliance Barra Mansa • Sul Fluminense</span>
       </div>
@@ -289,7 +290,7 @@
 
 
   <!-- ==========================================
-       PROGRAMAS & MODALIDADES (COM FOTOS ENVIADAS)
+       PROGRAMAS & MODALIDADES (OPTIMIZED WEBP IMAGES)
        ========================================== -->
   <section id="programas" class="section-padding bg-brandDarkSecondary relative border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
@@ -312,7 +313,7 @@
         <!-- Programa 1 (Faixa Branca Iniciantes) -->
         <div class="program-card reveal reveal-delay-1">
           <div class="relative h-64 sm:h-72 overflow-hidden bg-brandCard">
-            <img src="assets/iniciantes-faixa-branca.jpg" 
+            <img src="assets/iniciantes-faixa-branca.webp" 
                  alt="Jiu-Jitsu Iniciantes Faixa Branca" 
                  width="600"
                  height="400"
@@ -340,7 +341,7 @@
         <!-- Programa 2 (Graduados & Avançado) -->
         <div class="program-card reveal reveal-delay-2">
           <div class="relative h-64 sm:h-72 overflow-hidden bg-brandCard">
-            <img src="assets/avancado-faixa-preta.jpg" 
+            <img src="assets/avancado-faixa-preta.webp" 
                  alt="Jiu-Jitsu Avançado Graduados" 
                  width="600"
                  height="400"
@@ -368,7 +369,7 @@
         <!-- Programa 3 (Kids & Infantil) -->
         <div class="program-card reveal reveal-delay-3 col-span-1 md:col-span-2 lg:col-span-1">
           <div class="relative h-64 sm:h-72 overflow-hidden bg-brandCard">
-            <img src="assets/alliance-kids.jpg" 
+            <img src="assets/alliance-kids.webp" 
                  alt="Alliance Kids Jiu-Jitsu Infantil" 
                  width="600"
                  height="400"
@@ -737,7 +738,7 @@
         
         <!-- Logo Image & Text -->
         <div class="flex items-center gap-3">
-          <img src="assets/alliance-logo.png" alt="Alliance Logo" width="60" height="72" loading="lazy" decoding="async" class="h-10 sm:h-12 w-auto filter brightness-0 invert">
+          <img src="assets/alliance-logo.webp" alt="Alliance Logo" width="60" height="72" loading="lazy" decoding="async" class="h-10 sm:h-12 w-auto filter brightness-0 invert">
           <div class="flex flex-col">
             <span class="font-heading text-2xl sm:text-3xl tracking-wider leading-none text-white">
               ALLIANCE
@@ -811,7 +812,7 @@
       </button>
 
       <div class="mb-5 flex items-start gap-3 sm:gap-4">
-        <img src="assets/alliance-logo.png" alt="Alliance Logo" width="40" height="48" loading="lazy" decoding="async" class="h-8 sm:h-10 w-auto filter brightness-0 invert mt-1">
+        <img src="assets/alliance-logo.webp" alt="Alliance Logo" width="40" height="48" loading="lazy" decoding="async" class="h-8 sm:h-10 w-auto filter brightness-0 invert mt-1">
         <div>
           <span class="text-brandYellow font-heading text-base sm:text-lg tracking-wider uppercase">Passo Simples</span>
           <h3 id="modalTitle" class="font-heading text-2xl sm:text-3xl text-white uppercase tracking-wide">
