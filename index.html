@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Alliance Barra Mansa | Academia de Jiu-Jitsu de Alta Performance</title>
+  <meta name="description" content="Academia Alliance Barra Mansa - Referência em Jiu-Jitsu no Sul do Estado do Rio. Ambiente premium para todos os níveis, do iniciante ao graduado.">
+  
+  <!-- Google Fonts: Bebas Neue (Títulos Imponentes) & Montserrat (Corpo Geométrico) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#121212',
+            brandDarkSecondary: '#18181A',
+            brandCard: '#1C1C1E',
+            brandYellow: '#FFCC00',
+            brandYellowHover: '#E6B800',
+          },
+          fontFamily: {
+            heading: ['Bebas Neue', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brandDark text-white font-body antialiased selection:bg-brandYellow selection:text-black">
+
+  <!-- ==========================================
+       HEADER & NAVIGATION WITH ALLIANCE LOGO
+       ========================================== -->
+  <header id="mainHeader" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3.5 px-4 sm:px-6 md:px-12 border-b border-white/5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Official Alliance Logo -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+        <div class="p-1 bg-brandYellow/10 rounded border border-brandYellow/30 group-hover:border-brandYellow transition-colors">
+          <img src="assets/alliance-logo.png" alt="Alliance Jiu Jitsu Logo" class="h-9 sm:h-10 w-auto filter brightness-0 invert group-hover:scale-105 transition-transform">
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading text-2xl sm:text-2xl tracking-wider leading-none text-white group-hover:text-brandYellow transition-colors">
+            ALLIANCE
+          </span>
+          <span class="text-[10px] sm:text-[10px] font-bold tracking-[0.22em] text-brandYellow uppercase leading-tight">
+            BARRA MANSA
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav & Quick Contact -->
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-semibold tracking-wider text-gray-300 uppercase">
+        <a href="#hero" class="hover:text-brandYellow transition-colors py-1">Início</a>
+        <a href="#diferenciais" class="hover:text-brandYellow transition-colors py-1">Por Que Alliance</a>
+        <a href="#programas" class="hover:text-brandYellow transition-colors py-1">Modalidades</a>
+        <a href="#depoimentos" class="hover:text-brandYellow transition-colors py-1">A Voz do Tatame</a>
+        <a href="#operacional" class="hover:text-brandYellow transition-colors py-1">Endereço & Horários</a>
+        <a href="#faq" class="hover:text-brandYellow transition-colors py-1">Dúvidas</a>
+        
+        <a href="tel:24974029313" class="flex items-center gap-2 text-white hover:text-brandYellow transition-colors bg-white/5 hover:bg-white/10 px-3.5 py-2 rounded text-xs border border-white/10">
+          <i class="fa-solid fa-phone text-brandYellow"></i>
+          <span>(24) 97402-9313</span>
+        </a>
+
+        <button class="js-open-modal btn-cta-secondary text-xs uppercase font-heading py-2 px-4">
+          Agendar Aula
+        </button>
+      </nav>
+
+      <!-- Mobile Action Buttons & Menu Toggle -->
+      <div class="flex items-center gap-2.5 lg:hidden">
+        <button class="js-open-modal btn-cta-primary text-xs uppercase font-heading py-2 px-3.5">
+          Agendar
+        </button>
+
+        <button id="mobileMenuBtn" class="w-10 h-10 flex items-center justify-center text-xl text-white focus:outline-none rounded bg-white/5 border border-white/10" aria-label="Abrir Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNav" class="hidden lg:hidden bg-brandCard border-b border-brandYellow/20 px-6 py-6 mt-3 space-y-4 shadow-2xl rounded-b-xl">
+      <div class="flex items-center gap-3 pb-4 border-b border-white/10">
+        <img src="assets/alliance-logo.png" alt="Alliance Logo" class="h-8 w-auto filter brightness-0 invert">
+        <span class="font-heading text-2xl text-white">ALLIANCE BARRA MANSA</span>
+      </div>
+      <a href="#hero" class="block text-xl font-heading tracking-wider uppercase text-white hover:text-brandYellow py-1">Início</a>
+      <a href="#diferenciais" class="block text-xl font-heading tracking-wider uppercase text-white hover:text-brandYellow py-1">Por Que Alliance</a>
+      <a href="#programas" class="block text-xl font-heading tracking-wider uppercase text-white hover:text-brandYellow py-1">Modalidades</a>
+      <a href="#depoimentos" class="block text-xl font-heading tracking-wider uppercase text-white hover:text-brandYellow py-1">A Voz do Tatame</a>
+      <a href="#operacional" class="block text-xl font-heading tracking-wider uppercase text-white hover:text-brandYellow py-1">Horários & Localização</a>
+      <a href="#faq" class="block text-xl font-heading tracking-wider uppercase text-white hover:text-brandYellow py-1">Perguntas Frequentes</a>
+      
+      <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
+        <a href="https://wa.me/5524974029313" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 text-white bg-[#25D366] hover:bg-[#20bd5a] font-bold py-3 px-4 rounded text-sm uppercase tracking-wider">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Falar no WhatsApp</span>
+        </a>
+        <button class="js-open-modal btn-cta-primary w-full text-center py-3.5 text-lg">
+          AGENDAR AULA EXPERIMENTAL
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       1. HERO SECTION (PRIMEIRA DOBRA)
+       ========================================== -->
+  <section id="hero" class="relative min-h-screen flex items-center pt-28 sm:pt-32 pb-20 px-4 sm:px-6 md:px-12 bg-overlay-80 bg-cover bg-center overflow-hidden" 
+           style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=2070&auto=format&fit=crop');">
+    
+    <!-- Background Tint Overlay (84% Black) -->
+    <div class="absolute inset-0 bg-black/85 z-0"></div>
+
+    <div class="max-w-6xl mx-auto w-full hero-content text-left">
+      
+      <!-- Top Badge with Official Logo -->
+      <div class="reveal inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/70 border border-brandYellow/50 text-brandYellow text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
+        <img src="assets/alliance-logo.png" alt="Alliance Triangle Emblem" class="h-4 sm:h-5 w-auto filter brightness-0 invert">
+        <span class="w-2 h-2 rounded-full bg-brandYellow animate-ping"></span>
+        <span>Alliance Barra Mansa • Sul Fluminense</span>
+      </div>
+
+      <!-- Headline Imponente H1 Otimizado para Mobile (text-5xl no mobile!) -->
+      <h1 class="reveal reveal-delay-1 font-heading text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight leading-[0.95] text-white font-extrabold uppercase mb-6 sm:mb-8">
+        FORÇA, DISCIPLINA & <br>
+        <span class="text-brandYellow">EXCELÊNCIA</span> NO TATAME.
+      </h1>
+
+      <!-- Subtítulo Acolhedor -->
+      <p class="reveal reveal-delay-2 max-w-2xl text-lg sm:text-xl md:text-2xl text-gray-300 font-normal leading-relaxed mb-8 sm:mb-10">
+        Seja para dar os primeiros passos e amarrar a <span class="highlight-kw">FAIXA BRANCA</span> pela primeira vez, ou para os <span class="highlight-kw">GRADUADOS MAIS EXPERIENTES</span> refinarem sua arte. Nosso tatame é a <span class="highlight-kw">REFERÊNCIA</span> para o seu desenvolvimento físico e mental.
+      </p>
+
+      <!-- Giant Yellow CTA Button -->
+      <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <button class="js-open-modal btn-cta-primary pulse-cta group text-xl sm:text-2xl py-4.5 sm:py-5 px-6 sm:px-10">
+          <span>AGENDAR AULA EXPERIMENTAL</span>
+          <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
+        </button>
+
+        <a href="#operacional" class="btn-cta-secondary text-center py-4 sm:py-5 px-6 sm:px-8 text-base sm:text-lg">
+          <i class="fa-solid fa-location-dot text-brandYellow"></i>
+          <span>VER LOCALIZAÇÃO</span>
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="reveal reveal-delay-4 mt-12 sm:mt-16 grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 pt-8 sm:pt-12 border-t border-white/10 max-w-3xl">
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <i class="fa-solid fa-shield-halved text-brandYellow text-xl sm:text-2xl"></i>
+          <span class="text-xs sm:text-sm text-gray-300 font-medium uppercase tracking-wider"><span class="highlight-kw">METODOLOGIA CAMPEÃ</span></span>
+        </div>
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <i class="fa-solid fa-people-group text-brandYellow text-xl sm:text-2xl"></i>
+          <span class="text-xs sm:text-sm text-gray-300 font-medium uppercase tracking-wider">Ambiente Familiar</span>
+        </div>
+        <div class="flex items-center gap-2.5 sm:gap-3 col-span-2 sm:col-span-1">
+          <i class="fa-solid fa-dumbbell text-brandYellow text-xl sm:text-2xl"></i>
+          <span class="text-xs sm:text-sm text-gray-300 font-medium uppercase tracking-wider">Estrutura Premium</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       MARQUEE TICKER EM LOOP INFINITO
+       ========================================== -->
+  <section class="ticker-container">
+    <div class="ticker-wrapper font-heading text-xl sm:text-2xl tracking-widest text-white uppercase">
+      
+      <!-- Set 1 -->
+      <div class="ticker-item">
+        <span class="text-brandYellow font-bold">13X CAMPEÕES MUNDIAIS ALLIANCE</span>
+        <span class="text-gray-600">•</span>
+        <span class="text-white font-bold">100% TATAME DE ALTA ABSORÇÃO</span>
+        <span class="text-gray-600">•</span>
+        <span class="text-brandYellow font-bold">SUL FLUMINENSE REFERÊNCIA EM BARRA MANSA</span>
+        <span class="text-gray-600">•</span>
+        <span class="text-white font-bold">TODOS OS NÍVEIS INICIANTES ATÉ GRADUADOS</span>
+        <span class="text-gray-600">•</span>
+      </div>
+
+      <!-- Set 2 -->
+      <div class="ticker-item">
+        <span class="text-brandYellow font-bold">13X CAMPEÕES MUNDIAIS ALLIANCE</span>
+        <span class="text-gray-600">•</span>
+        <span class="text-white font-bold">100% TATAME DE ALTA ABSORÇÃO</span>
+        <span class="text-gray-600">•</span>
+        <span class="text-brandYellow font-bold">SUL FLUMINENSE REFERÊNCIA EM BARRA MANSA</span>
+        <span class="text-gray-600">•</span>
+        <span class="text-white font-bold">TODOS OS NÍVEIS INICIANTES ATÉ GRADUADOS</span>
+        <span class="text-gray-600">•</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       POR QUE A ALLIANCE BARRA MANSA? (DIFERENCIAIS)
+       ========================================== -->
+  <section id="diferenciais" class="section-padding bg-brandDark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal">
+        <span class="text-brandYellow font-heading text-lg sm:text-xl tracking-widest uppercase">Tradição & Respeito</span>
+        <h2 class="font-heading text-4xl sm:text-6xl md:text-7xl tracking-wider text-white uppercase mt-1 mb-3 sm:mb-4">
+          POR QUE TREINAR NA <span class="highlight-kw">ALLIANCE BM</span>?
+        </h2>
+        <div class="title-accent-line mx-auto"></div>
+        <p class="text-gray-400 text-base sm:text-lg mt-4 sm:mt-6 font-normal">
+          Combinamos a maior <span class="highlight-kw">METODOLOGIA DE JIU-JITSU</span> do mundo com uma estrutura preparada em <span class="highlight-kw">BARRA MANSA</span> para recepcionar você e sua família.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
+        
+        <!-- Diferencial 1 -->
+        <div class="differential-card reveal reveal-delay-1">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-brandYellow/10 text-brandYellow rounded-lg border border-brandYellow/30 flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <h3 class="font-heading text-2xl sm:text-3xl text-white uppercase tracking-wider mb-2.5"><span class="highlight-kw">METODOLOGIA CAMPEÃ</span></h3>
+          <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+            Ensino padronizado criado pela Alliance, a equipe mais vitoriosa da história do Jiu-Jitsu mundial.
+          </p>
+        </div>
+
+        <!-- Diferencial 2 -->
+        <div class="differential-card reveal reveal-delay-2">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-brandYellow/10 text-brandYellow rounded-lg border border-brandYellow/30 flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3 class="font-heading text-2xl sm:text-3xl text-white uppercase tracking-wider mb-2.5">Professores Certificados</h3>
+          <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+            Instrução técnica refinada e atenciosa, focada na evolução segura e individual de cada praticante.
+          </p>
+        </div>
+
+        <!-- Diferencial 3 -->
+        <div class="differential-card reveal reveal-delay-3">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-brandYellow/10 text-brandYellow rounded-lg border border-brandYellow/30 flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <h3 class="font-heading text-2xl sm:text-3xl text-white uppercase tracking-wider mb-2.5">Ambiente Respeitoso</h3>
+          <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+            Clima acolhedor, livre de vaidades excessivas. Aqui o companheiro de treino é seu maior aliado.
+          </p>
+        </div>
+
+        <!-- Diferencial 4 -->
+        <div class="differential-card reveal reveal-delay-4">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-brandYellow/10 text-brandYellow rounded-lg border border-brandYellow/30 flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6">
+            <i class="fa-solid fa-spray-can-sparkles"></i>
+          </div>
+          <h3 class="font-heading text-2xl sm:text-3xl text-white uppercase tracking-wider mb-2.5">Tatame Higienizado</h3>
+          <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+            Área de treino espaçosa, com higienização diária rigorosa e tatame com máxima absorção de impacto.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       PROGRAMAS & MODALIDADES
+       ========================================== -->
+  <section id="programas" class="section-padding bg-brandDarkSecondary relative border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 sm:gap-6 reveal">
+        <div>
+          <span class="text-brandYellow font-heading text-lg sm:text-xl tracking-widest uppercase">Para Todas as Idades & Objetivos</span>
+          <h2 class="font-heading text-4xl sm:text-6xl tracking-wider text-white uppercase mt-1">
+            NOSSAS MODALIDADES DE TREINO
+          </h2>
+          <div class="title-accent-line"></div>
+        </div>
+        <p class="text-gray-400 max-w-md text-sm sm:text-base">
+          Encontre o programa de treinamento que melhor se adapta aos seus objetivos, desde o <span class="highlight-kw">INICIANTE</span> até a <span class="highlight-kw">ALTA PERFORMANCE</span>.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        
+        <!-- Programa 1 -->
+        <div class="program-card reveal reveal-delay-1">
+          <div class="relative h-56 sm:h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1564415051543-cb73a7468103?q=80&w=800&auto=format&fit=crop" 
+                 alt="Jiu-Jitsu Iniciantes no Tatame" 
+                 class="program-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-brandCard via-brandCard/40 to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-brandYellow text-black font-heading text-xs font-bold px-2.5 py-1 uppercase tracking-wider rounded">
+              FAIXA BRANCA FOCUS
+            </span>
+          </div>
+          <div class="p-5 sm:p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-heading text-3xl sm:text-4xl text-white uppercase tracking-wide">Jiu-Jitsu Iniciantes</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+                Aprenda os fundamentos essenciais da arte suave, postura e saídas básicas para vestir sua <span class="highlight-kw">FAIXA BRANCA</span> com segurança.
+              </p>
+            </div>
+            <button class="js-open-modal w-full btn-cta-secondary text-xs uppercase py-3 justify-center mt-4" data-level="Nunca treinei (Iniciante / Faixa Branca)">
+              AGENDAR AULA EXPERIMENTAL
+            </button>
+          </div>
+        </div>
+
+        <!-- Programa 2 -->
+        <div class="program-card reveal reveal-delay-2">
+          <div class="relative h-56 sm:h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=800&auto=format&fit=crop" 
+                 alt="Jiu-Jitsu Avançado Treino Intenso" 
+                 class="program-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-brandCard via-brandCard/40 to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-brandYellow text-black font-heading text-xs font-bold px-2.5 py-1 uppercase tracking-wider rounded">
+              ALTA PERFORMANCE
+            </span>
+          </div>
+          <div class="p-5 sm:p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-heading text-3xl sm:text-4xl text-white uppercase tracking-wide">Jiu-Jitsu Avançado</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+                Para <span class="highlight-kw">GRADUADOS</span> que buscam refinar detalhes técnicos estratégicos, transições fluidas e ritmo de luta.
+              </p>
+            </div>
+            <button class="js-open-modal w-full btn-cta-secondary text-xs uppercase py-3 justify-center mt-4" data-level="Graduado (Faixa Azul, Roxa, Marrom ou Preta)">
+              AGENDAR AULA EXPERIMENTAL
+            </button>
+          </div>
+        </div>
+
+        <!-- Programa 3 -->
+        <div class="program-card reveal reveal-delay-3 col-span-1 md:col-span-2 lg:col-span-1">
+          <div class="relative h-56 sm:h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop" 
+                 alt="Alliance Kids Jiu-Jitsu Infantil" 
+                 class="program-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-brandCard via-brandCard/40 to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-brandYellow text-black font-heading text-xs font-bold px-2.5 py-1 uppercase tracking-wider rounded">
+              KIDS & INFANTIL
+            </span>
+          </div>
+          <div class="p-5 sm:p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-heading text-3xl sm:text-4xl text-white uppercase tracking-wide">Alliance Kids</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+                Desenvolvimento de <span class="highlight-kw">DISCIPLINA & RESPEITO</span>, coordenação motora e autoconfiança de forma lúdica.
+              </p>
+            </div>
+            <button class="js-open-modal w-full btn-cta-secondary text-xs uppercase py-3 justify-center mt-4" data-level="Infantil / Kids">
+              AGENDAR AULA EXPERIMENTAL
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       PROVA SOCIAL (A VOZ DO TATAME)
+       ========================================== -->
+  <section id="depoimentos" class="section-padding bg-brandDark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      
+      <!-- Section Header Imponente H2 -->
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal">
+        <span class="text-brandYellow font-heading text-lg sm:text-xl tracking-widest uppercase">A Voz do Tatame</span>
+        <h2 class="font-heading text-4xl sm:text-6xl md:text-7xl tracking-wider text-white uppercase mt-1 mb-3 sm:mb-4">
+          REFERÊNCIA NO <span class="highlight-kw">SUL DO ESTADO DO RIO</span>.
+        </h2>
+        <div class="title-accent-line mx-auto"></div>
+        <p class="text-gray-400 text-base sm:text-lg mt-4 sm:mt-6 font-normal">
+          Confira o que nossos alunos e graduados dizem sobre o aprendizado, a energia e a estrutura da Alliance Barra Mansa.
+        </p>
+      </div>
+
+      <!-- Grid 3 Testimonial Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        
+        <!-- Card 1 -->
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="quote-watermark">“</div>
+          
+          <div class="relative z-10 space-y-3 sm:space-y-4">
+            <div class="flex items-center gap-1 text-brandYellow text-xs sm:text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            
+            <p class="text-white text-base sm:text-xl font-medium leading-relaxed italic">
+              "Aprendizado de excelência com ótimos profissionais, estrutura e ambiente!"
+            </p>
+          </div>
+
+          <div class="relative z-10 pt-6 sm:pt-8 mt-6 border-t border-white/10 flex items-center gap-3 sm:gap-4">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brandYellow/20 border border-brandYellow text-brandYellow flex items-center justify-center font-heading font-bold text-xl">
+              AL
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base uppercase font-heading tracking-wide">Aluno Alliance</h3>
+              <p class="text-xs text-brandYellow">Barra Mansa - RJ</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="quote-watermark">“</div>
+          
+          <div class="relative z-10 space-y-3 sm:space-y-4">
+            <div class="flex items-center gap-1 text-brandYellow text-xs sm:text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            
+            <p class="text-white text-base sm:text-xl font-medium leading-relaxed italic">
+              "Alliance BM, referência no sul do estado do Rio."
+            </p>
+          </div>
+
+          <div class="relative z-10 pt-6 sm:pt-8 mt-6 border-t border-white/10 flex items-center gap-3 sm:gap-4">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brandYellow/20 border border-brandYellow text-brandYellow flex items-center justify-center font-heading font-bold text-xl">
+              BM
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base uppercase font-heading tracking-wide">Membro da Comunidade</h3>
+              <p class="text-xs text-brandYellow">Praticante de Jiu-Jitsu</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="quote-watermark">“</div>
+          
+          <div class="relative z-10 space-y-3 sm:space-y-4">
+            <div class="flex items-center gap-1 text-brandYellow text-xs sm:text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            
+            <p class="text-white text-base sm:text-xl font-medium leading-relaxed italic">
+              "Lugar de boa energia, conexão e desenvolvimento."
+            </p>
+          </div>
+
+          <div class="relative z-10 pt-6 sm:pt-8 mt-6 border-t border-white/10 flex items-center gap-3 sm:gap-4">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brandYellow/20 border border-brandYellow text-brandYellow flex items-center justify-center font-heading font-bold text-xl">
+              AB
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base uppercase font-heading tracking-wide">Atleta Alliance</h3>
+              <p class="text-xs text-brandYellow">Barra Mansa - RJ</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       BANNER DE CONVERSÃO INTERMEDIÁRIO
+       ========================================== -->
+  <section class="bg-gradient-to-r from-brandYellow/20 via-brandYellow/10 to-transparent border-y border-brandYellow/30 py-12 sm:py-16 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left reveal">
+      <div>
+        <span class="text-brandYellow font-heading text-lg tracking-widest uppercase">Primeiros Passos Sem Compromisso</span>
+        <h3 class="font-heading text-3xl sm:text-5xl text-white uppercase mt-1">
+          SUA PRIMEIRA <span class="highlight-kw">AULA EXPERIMENTAL É GRATUITA</span>
+        </h3>
+        <p class="text-gray-300 text-sm sm:text-base mt-2 max-w-xl">
+          Venha conhecer nossa estrutura no <span class="highlight-kw">CENTRO DE BARRA MANSA</span> e faça um treino com nossa equipe.
+        </p>
+      </div>
+      <button class="js-open-modal btn-cta-primary pulse-cta text-lg py-4 px-8 w-full md:w-auto">
+        AGENDAR MINHA AULA
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       3. INFORMAÇÕES OPERACIONAIS & HORÁRIOS DISPONÍVEIS
+       ========================================== -->
+  <section id="operacional" class="section-padding bg-[#18181A] relative border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      
+      <div class="mb-10 sm:mb-12 reveal">
+        <span class="text-brandYellow font-heading text-lg sm:text-xl tracking-widest uppercase">Estabilidade & Estrutura</span>
+        <h2 class="font-heading text-4xl sm:text-6xl tracking-wider text-white uppercase mt-1">
+          INFORMAÇÕES OPERACIONAIS
+        </h2>
+        <div class="title-accent-line"></div>
+      </div>
+
+      <!-- Grid of Solid Rectangular Blocks -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        
+        <!-- Block 1 -->
+        <div class="solid-block reveal reveal-delay-1">
+          <div class="space-y-3 sm:space-y-4">
+            <div class="w-12 h-12 bg-brandYellow/10 text-brandYellow rounded border border-brandYellow/30 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h3 class="font-heading text-2xl sm:text-3xl text-white uppercase tracking-wider">ENDEREÇO</h3>
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+              <strong class="text-white">Av. Joaquim Leite, 495 - Centro</strong><br>
+              Barra Mansa - RJ, 27345-391
+            </p>
+          </div>
+          
+          <a href="https://maps.google.com/?q=Av.+Joaquim+Leite,+495+-+Centro,+Barra+Mansa+-+RJ,+27345-391" 
+             target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 text-brandYellow font-bold text-xs sm:text-sm uppercase tracking-wider hover:underline pt-4 sm:pt-6">
+            <span>Abrir no Google Maps</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Block 2 -->
+        <div class="solid-block reveal reveal-delay-2">
+          <div class="space-y-3 sm:space-y-4">
+            <div class="w-12 h-12 bg-brandYellow/10 text-brandYellow rounded border border-brandYellow/30 flex items-center justify-center text-xl">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3 class="font-heading text-2xl sm:text-3xl text-white uppercase tracking-wider">CONTATO DIRETO</h3>
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+              Fale diretamente com nossa recepção para tirar dúvidas e agendar seus treinos.
+            </p>
+            <p class="text-2xl sm:text-3xl font-bold text-white tracking-wide font-heading pt-1">
+              <span class="highlight-kw">(24) 97402-9313</span>
+            </p>
+          </div>
+
+          <a href="https://wa.me/5524974029313?text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+as+aulas+na+Alliance+Barra+Mansa." 
+             target="_blank" rel="noopener noreferrer" 
+             class="btn-cta-secondary w-full justify-center text-center text-xs py-3 mt-4 sm:mt-6">
+            <i class="fa-brands fa-whatsapp text-brandYellow text-lg"></i>
+            <span>CHAMAR NO WHATSAPP</span>
+          </a>
+        </div>
+
+        <!-- Block 3 -->
+        <div class="solid-block reveal reveal-delay-3">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 bg-brandYellow/10 text-brandYellow rounded border border-brandYellow/30 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <span class="peak-badge text-xs">
+                <i class="fa-solid fa-clock text-brandYellow"></i>
+                MANHÃ • TARDE • NOITE
+              </span>
+            </div>
+
+            <h3 class="font-heading text-2xl sm:text-3xl text-white uppercase tracking-wider mb-2">HORÁRIOS DISPONÍVEIS</h3>
+            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">
+              Oferecemos turmas divididas nos três turnos para adequação perfeita à sua rotina:
+            </p>
+
+            <div class="space-y-2.5">
+              <div class="schedule-slot">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-sun text-brandYellow text-sm"></i>
+                  <span class="text-sm font-bold text-white uppercase tracking-wider font-heading">Turno da Manhã</span>
+                </div>
+                <span class="text-xs font-bold text-brandYellow uppercase tracking-wider">Aulas Disponíveis</span>
+              </div>
+
+              <div class="schedule-slot">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-cloud-sun text-brandYellow text-sm"></i>
+                  <span class="text-sm font-bold text-white uppercase tracking-wider font-heading">Turno da Tarde</span>
+                </div>
+                <span class="text-xs font-bold text-brandYellow uppercase tracking-wider">Aulas Disponíveis</span>
+              </div>
+
+              <div class="schedule-slot">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-moon text-brandYellow text-sm"></i>
+                  <span class="text-sm font-bold text-white uppercase tracking-wider font-heading">Turno da Noite</span>
+                </div>
+                <span class="text-xs font-bold text-brandYellow uppercase tracking-wider">Aulas Disponíveis</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xs text-gray-400 italic pt-3 sm:pt-4">
+            *Fale no WhatsApp para consultar as turmas específicas de cada turno.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Google Maps Embed Container -->
+      <div class="mt-8 sm:mt-12 rounded-lg overflow-hidden border border-white/10 bg-brandCard shadow-2xl reveal">
+        <iframe 
+          title="Mapa de Localização Alliance Barra Mansa"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.872288301726!2d-44.175892!3d-22.546376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9e430ad8a42c3d%3A0x6b633ec7c271cf0!2sAv.%20Joaquim%20Leite%2C%20495%20-%20Centro%2C%20Barra%20Mansa%20-%20RJ%2C%2027345-391!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+          width="100%" 
+          height="300" 
+          style="border:0; filter: grayscale(90%) invert(90%) contrast(120%);" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       FAQ (PERGUNTAS FREQUENTES ACCORDION)
+       ========================================== -->
+  <section id="faq" class="section-padding bg-brandDark relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-12">
+      
+      <div class="text-center mb-12 sm:mb-16 reveal">
+        <span class="text-brandYellow font-heading text-lg sm:text-xl tracking-widest uppercase">Tire Suas Dúvidas</span>
+        <h2 class="font-heading text-4xl sm:text-6xl tracking-wider text-white uppercase mt-1">
+          PERGUNTAS FREQUENTES
+        </h2>
+        <div class="title-accent-line mx-auto"></div>
+      </div>
+
+      <div class="space-y-3 sm:space-y-4 reveal">
+        
+        <!-- Question 1 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Preciso ter experiência prévia em artes marciais para começar?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>Não! Nossas turmas de iniciantes são desenhadas especialmente para quem vai amarrar a <span class="highlight-kw">FAIXA BRANCA</span> pela primeira vez. Você aprenderá cada movimento no seu ritmo, com acompanhamento de instrutores preparados.</p>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Preciso ter Kimono próprio para a aula experimental?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>Para a primeira aula experimental você pode vir com uma roupa de treino confortável. Caso precise, consulte nossa recepção via WhatsApp para verificar a disponibilidade de kimono emprestado.</p>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Como funciona o agendamento da aula experimental?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>É muito fácil: basta clicar no botão de <span class="highlight-kw">AGENDAR AULA EXPERIMENTAL</span> na página, preencher seu nome e selecionar o horário desejado. Nossa equipe confirmará a disponibilidade no WhatsApp!</p>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Qual a idade mínima para as turmas infantis?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>Recebemos crianças a partir dos 4 anos de idade no programa Alliance Kids. O foco do treino infantil é o desenvolvimento psicomotor, a disciplina, a autoconfiança e o respeito mútuo.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       4. FOOTER (RODAPÉ) WITH ALLIANCE LOGO
+       ========================================== -->
+  <footer class="bg-black py-12 sm:py-16 px-4 sm:px-6 md:px-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 pb-10 sm:pb-12 border-b border-white/10">
+        
+        <!-- Logo Image & Text -->
+        <div class="flex items-center gap-3">
+          <img src="assets/alliance-logo.png" alt="Alliance Logo" class="h-10 sm:h-12 w-auto filter brightness-0 invert">
+          <div class="flex flex-col">
+            <span class="font-heading text-2xl sm:text-3xl tracking-wider leading-none text-white">
+              ALLIANCE
+            </span>
+            <span class="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-brandYellow uppercase">
+              BARRA MANSA
+            </span>
+          </div>
+        </div>
+
+        <!-- Redes Sociais Links Rápidos -->
+        <div class="flex items-center gap-5 sm:gap-6">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" 
+             class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/5 border border-white/10 text-white hover:text-brandYellow hover:border-brandYellow flex items-center justify-center transition-all">
+            <i class="fa-brands fa-instagram text-lg sm:text-xl"></i>
+          </a>
+          <a href="https://wa.me/5524974029313" target="_blank" rel="noopener" aria-label="WhatsApp" 
+             class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/5 border border-white/10 text-white hover:text-brandYellow hover:border-brandYellow flex items-center justify-center transition-all">
+            <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" 
+             class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/5 border border-white/10 text-white hover:text-brandYellow hover:border-brandYellow flex items-center justify-center transition-all">
+            <i class="fa-brands fa-facebook-f text-base sm:text-lg"></i>
+          </a>
+        </div>
+
+        <!-- ÚLTIMO BOTÃO DE CTA AMARELO PARA CONTATO -->
+        <div class="w-full md:w-auto">
+          <button class="js-open-modal btn-cta-primary text-base sm:text-lg py-3.5 sm:py-4 px-6 sm:px-8 w-full md:w-auto justify-center">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>ENTRAR EM CONTATO</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Info -->
+      <div class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-3 text-center md:text-left">
+        <p>© 2026 Alliance Barra Mansa. Todos os direitos reservados.</p>
+        <p class="flex flex-col sm:flex-row items-center gap-1">
+          <span>Av. Joaquim Leite, 495 - Centro, Barra Mansa - RJ</span>
+          <span class="hidden sm:inline">•</span>
+          <span>(24) 97402-9313</span>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==========================================
+       BOTÃO FLUTUANTE DE WHATSAPP PARA MOBILE UX
+       ========================================== -->
+  <a href="https://wa.me/5524974029313?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+aula+experimental+na+Alliance+Barra+Mansa." 
+     target="_blank" 
+     rel="noopener" 
+     class="floating-whatsapp-mobile md:hidden" 
+     aria-label="Chamar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+
+  <!-- ==========================================
+       MODAL INTERATIVO DE AGENDAMENTO
+       ========================================== -->
+  <div id="bookingModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      
+      <button id="closeModalBtn" class="modal-close" aria-label="Fechar Modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="mb-5 flex items-start gap-3 sm:gap-4">
+        <img src="assets/alliance-logo.png" alt="Alliance Logo" class="h-8 sm:h-10 w-auto filter brightness-0 invert mt-1">
+        <div>
+          <span class="text-brandYellow font-heading text-base sm:text-lg tracking-wider uppercase">Passo Simples</span>
+          <h3 id="modalTitle" class="font-heading text-2xl sm:text-3xl text-white uppercase tracking-wide">
+            AGENDAR AULA EXPERIMENTAL
+          </h3>
+          <p class="text-gray-400 text-xs mt-1">
+            Preencha abaixo para gerar sua solicitação direta via WhatsApp com a equipe Alliance BM.
+          </p>
+        </div>
+      </div>
+
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="studentName" class="form-label">Seu Nome Completo *</label>
+          <input type="text" id="studentName" class="form-input" placeholder="Ex: Gabriel Silva" required>
+        </div>
+
+        <div class="form-group">
+          <label for="studentLevel" class="form-label">Qual o seu nível no Jiu-Jitsu?</label>
+          <select id="studentLevel" class="form-select">
+            <option value="Nunca treinei (Iniciante / Faixa Branca)">Nunca treinei (Iniciante / Faixa Branca)</option>
+            <option value="Já treinei anteriormente">Já treinei anteriormente</option>
+            <option value="Graduado (Faixa Azul, Roxa, Marrom ou Preta)">Graduado (Faixa Azul, Roxa, Marrom ou Preta)</option>
+            <option value="Infantil / Kids">Infantil / Kids</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="preferredPeriod" class="form-label">Horário de Preferência</label>
+          <select id="preferredPeriod" class="form-select">
+            <option value="Manhã">Turno da Manhã</option>
+            <option value="Tarde">Turno da Tarde</option>
+            <option value="Noite">Turno da Noite</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="studentNotes" class="form-label">Observação (Opcional)</label>
+          <input type="text" id="studentNotes" class="form-input" placeholder="Ex: Gostaria de saber valores das mensalidades">
+        </div>
+
+        <button type="submit" class="btn-cta-primary w-full mt-4 text-center justify-center py-3.5 sm:py-4 text-base sm:text-lg">
+          <i class="fa-brands fa-whatsapp text-xl sm:text-2xl"></i>
+          <span>ENVIAR PARA O WHATSAPP</span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>

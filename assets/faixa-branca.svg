@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 500 200">
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+    <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.8"/>
+  </filter>
+
+  <g filter="url(#shadow)">
+    <!-- White Belt Tied Knot Body Contour -->
+    <!-- Top Left Strand -->
+    <path d="M 10 30 Q 200 60 250 50 Q 150 15 20 20 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+    <!-- Top Right Strand -->
+    <path d="M 270 50 Q 350 20 480 10 Q 480 40 310 70 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+    <!-- Bottom Right Tail -->
+    <path d="M 310 70 Q 400 110 495 150 L 460 190 Q 320 120 290 85 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+    <!-- Bottom Left Tail (with Black Rank Tip) -->
+    <path d="M 200 60 Q 120 100 25 160 L 60 195 Q 180 120 250 75 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+    
+    <!-- Black Rank Bar (Tarja Preta) on Bottom Left Tail -->
+    <polygon points="40,150 150,80 180,98 70,168" fill="#000000" stroke="#000000" stroke-width="2"/>
+    <!-- White Rank Degree Stripe -->
+    <line x1="55" y1="160" x2="68" y2="172" stroke="#FFFFFF" stroke-width="6"/>
+
+    <!-- Central Knot (Nó Central) -->
+    <path d="M 230 40 C 210 60 210 120 240 140 C 280 150 310 120 310 50 C 280 30 250 30 230 40 Z" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+  </g>
+</svg>
